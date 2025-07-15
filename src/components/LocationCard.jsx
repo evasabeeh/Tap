@@ -17,7 +17,7 @@ export default function LocationCard({ place }) {
         <div
             ref={ref}
             className={`transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'
-                } bg-[#FAF7F0] p-4 rounded-lg shadow-lg`}
+                } bg-[#FAF7F0] px-4 py-8 rounded-lg shadow-lg`}
         >
             <h2 className="text-lg font-semibold">{place.display_name}</h2>
             <p className="text-gray-600">Type: {place.type}</p>
