@@ -5,7 +5,7 @@ import { setupIdleCallback } from './utils/preload';
 export default function App() {
   const [location, setLocation] = useState(null);
   const [places, setPlaces] = useState([]);
-  const [type, setType] = useState('toilets');
+  const [type, setType] = useState('drinking_water');
   const [loading, setLoading] = useState(true);
   const [currentAddress, setCurrentAddress] = useState('');
   const [networkInfo, setNetworkInfo] = useState('');
@@ -76,24 +76,27 @@ export default function App() {
         </div>
 
         <div className="flex justify-center mb-10 gap-4">
-          <button
-            onClick={() => setType('toilets')}
-            className={`cursor-pointer px-4 py-2 rounded-xl ${type === 'toilets' ? 'bg-[#0693e3] text-white' : ''}`}
-          >
-            Toilets
-          </button>
+
           <button
             onClick={() => setType('drinking_water')}
             className={`cursor-pointer px-4 py-2 rounded-xl ${type === 'drinking_water' ? 'bg-[#0693e3] text-white' : ''}`}
           >
             Water
           </button>
+
+          <button
+            onClick={() => setType('toilets')}
+            className={`cursor-pointer px-4 py-2 rounded-xl ${type === 'toilets' ? 'bg-[#0693e3] text-white' : ''}`}
+          >
+            Toilets
+          </button>
+
         </div>
 
         {loading ? (
           <p className="text-center text-gray-500">Loading nearby locations...</p>
         ) : places.length > 0 ? (
-          <div className="grid gap-4">
+            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
             {places.map((place, index) => (
               <LocationCard key={index} place={place} />
             ))}

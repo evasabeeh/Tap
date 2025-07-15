@@ -16,11 +16,13 @@ export default function LocationCard({ place }) {
     return (
         <div
             ref={ref}
-            className={`transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'
-                } bg-[#FAF7F0] px-4 py-8 rounded-lg shadow-lg`}
+            className={`transition duration-700 ease-in-out transform hover:scale-105 hover:bg-[#FAF7F0]
+            ${isVisible ? 'opacity-100' : 'opacity-0'} 
+             px-4 lg:px-6 py-8 lg:py-10 rounded-lg shadow-2xl`}
         >
             <h2 className="text-lg font-semibold">{place.display_name}</h2>
             <p className="text-gray-600">Type: {place.type}</p>
         </div>
     );
+
 }
